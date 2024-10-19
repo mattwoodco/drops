@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import { cookies } from 'next/headers';
-import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import Logo from './components/Logo';
 import Pagination from './components/Pagination';
@@ -73,9 +72,6 @@ export default async function Home(props: any) {
         <p className="text-red-600 mb-4">
           There was an error fetching your bookmarks. Please try again later.
         </p>
-        <Link href="/raindrop-auth" className="text-blue-600 hover:underline">
-          Manage Raindrop Authentication
-        </Link>
       </div>
     );
   }
@@ -103,11 +99,7 @@ export default async function Home(props: any) {
     <div className="container mx-auto px-4 py-8">
       <div className="flex justify-between items-center mb-6">
         <Logo />
-        <Link href="/raindrop-auth" className="text-blue-600 hover:underline">
-          Manage Raindrop Authentication
-        </Link>
       </div>
-      <h1 className="text-3xl font-bold mb-6">Your Latest Drops</h1>
       <SearchInput />
       {paginatedBookmarks.length === 0 ? (
         <p>No drops found.</p>
